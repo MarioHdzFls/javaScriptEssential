@@ -26,6 +26,7 @@ startTime = new Date().getTime();
             // Calcular el tiempo transcurrido y las palabras por minuto (WPM)
             var timeElapsed = (endTime - startTime) / 1000; // en segundos
             var userTypedText = document.getElementById("userInput").value;
+            var totalLength = userTypedText.length;
 
             // Dividir el texto usando regex para contar las palabras correctamente
             var typedWords = userTypedText.split(/\s+/).filter(function (word) {
@@ -41,6 +42,7 @@ startTime = new Date().getTime();
             // Mostrar los resultados
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = "<h2>Resultados de la Prueba de Escritura:</h2>" +
+                "<p>Longitud total: " + totalLength + "</p>" +
                 "<p>Palabras Escribidas: " + typedWords + "</p>" +
                 "<p>Tiempo Transcurrido: " + timeElapsed.toFixed(2) + " segundos</p>" +
                 "<p>Palabras Por Minuto (WPM): " + wpm + "</p>";
